@@ -1,0 +1,255 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Manrope", sans-serif;
+    display: flex;
+    justify-content: center;
+    background-image: url(./images/bg-pattern.svg);
+    background-repeat: no-repeat;
+}
+
+:root {
+    --dark-blue:hsl(227, 35%, 25%);
+}
+
+.contianer {
+    max-width: 1400px;
+}
+
+header {
+    margin-top: 70px;
+    padding: 50px 0;
+    background-image: url(./images/pattern-circles.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 30px;
+    color: var(--dark-blue);
+    margin-bottom: 15px;
+}
+
+header p {
+    font-size: 15px;
+    color:  hsl(225, 20%, 60%);
+}
+
+aside {
+    background-color: hsl(0, 0%, 100%);
+    padding: 50px 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px hsl(227, 25%, 85%);
+    font-size: 15px;
+    color: hsl(225, 20%, 60%);
+    min-width: 500px;
+    margin-top: 25px;
+    margin-bottom: 35px;
+}
+
+.payment {
+    display: flex;
+    margin-bottom: 50px;
+}
+
+.payment .pageviews {
+    text-transform: uppercase;
+    flex: 1;
+    align-self: center;
+}
+
+.payment .price {
+    flex: 2;
+    display: flex;
+    justify-content: flex-end;
+    transition: all 0.5s;
+}
+
+.payment .price span {
+    display: inline-block;
+}
+
+.payment .price span:first-of-type,
+.payment .price span:first-of-type span{
+    color: var(--dark-blue);
+    font-size: 40px;
+    line-height: 40px;
+    font-weight: 800;
+}
+
+.payment .price span:last-of-type {
+    font-size: 15px;
+    align-self: center;
+    margin-left: 5px;
+}
+
+.slider .slider-bar {
+    position: relative;
+    height: 20px;
+}
+
+.slider-bar input[type="range"]{
+    width: 100%;
+}
+
+.myrange {
+    appearance: none;
+    background-color: hsl(174, 77%, 80%);
+    height: 10px;
+    border-radius: 5px;
+    outline: none;
+}
+
+
+
+.myrange::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 35px;
+    height: 35px;
+    background-image: url("images/icon-slider.svg");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-color: hsl(174, 86%, 45%);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.myrange::-webkit-slider-thumb:hover {
+    box-shadow: 0px 0px 10px hsl(174, 86%, 45%);
+}
+
+.slider .monthly {
+    text-align: right;
+    margin-top: 30px;
+    font-size: 13px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.slider .monthly .discount {
+    padding: 3px 5px;
+    background-color:  hsl(14, 92%, 95%);
+    color: hsl(15, 100%, 70%);
+    border-radius: 5px;
+}
+
+.slider .monthly span, label {
+    margin-left: 10px;
+}
+
+.slider .switch {
+    position: relative;
+    height: 20px;
+    width: 40px;
+    display: inline-block;
+    border-radius: 20px;
+    background-color: hsl(224, 65%, 95%);
+    cursor: pointer;
+}
+
+.slider .switch:hover {
+    background-color: hsl(174, 77%, 80%);
+}
+
+.slider .switch input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.slider .switch .switcher {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    position: absolute;
+    background-color: white;
+    top: 2px;
+    left: -7px;
+    transition: all 0.5s;
+}
+
+.slider .switch input:checked + .switcher{
+    transform: translateX(18px);
+}
+
+hr {
+    border: 1px solid hsl(0, 0%, 98%);
+    margin: 30px 0;
+}
+
+.features {
+    display: flex;
+    justify-content: space-between;
+}
+
+.features ul {
+    list-style-image: url(./images/icon-check.svg);
+    margin-left: 20px;
+    line-height: 25px;
+}
+
+.features button {
+    background-color: var(--dark-blue);
+    color: rgb(204, 202, 202);
+    border: none;
+    width: 180px;
+    height: 45px;
+    border-radius: 20px;
+    outline: none;
+    cursor: pointer;
+    font-size: 15px;
+    align-self: center;
+    transition: 0.5s;
+}
+
+.features button:hover {
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    
+    color: white;
+}
+
+@media (max-width: 600px){
+    .container {
+        min-width: 375px;
+    }
+
+    header {
+        margin-top: 70px;
+    }
+
+    aside {
+        min-width: 375px;
+        padding: 50px 30px;
+        margin-bottom: 50px;
+    }
+
+    .payment .price span {
+        display: inline-block;
+    }
+
+    .payment .price span:first-of-type,
+    .payment .price span:first-of-type span{
+        color: var(--dark-blue);
+        font-size: 30px;
+        line-height: 30px;
+    }
+
+    .features {
+        flex-direction: column;
+    }
+
+    .features ul {
+        align-self: center;
+    }
+
+    .features button {
+        margin-top: 30px;
+    }
+}
